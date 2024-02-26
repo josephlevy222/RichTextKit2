@@ -27,12 +27,13 @@ extension RichTextView: UIDropInteractionDelegate {}
 open class RichTextView: UITextView, RichTextViewComponent {
 
     // MARK: - Initializers
-
+	
     public convenience init(
         data: Data,
         format: RichTextDataFormat = .archivedData
     ) throws {
-        self.init()
+		if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
+		else { self.init() }
         try self.setup(with: data, format: format)
     }
 
@@ -40,7 +41,8 @@ open class RichTextView: UITextView, RichTextViewComponent {
         string: NSAttributedString,
         format: RichTextDataFormat = .archivedData
     ) {
-        self.init()
+		if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
+		else { self.init() }
         self.setup(with: string, format: format)
     }
 
