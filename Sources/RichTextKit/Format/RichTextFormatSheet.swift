@@ -54,13 +54,13 @@ public struct RichTextFormatSheet: RichTextFormatToolbarBase {
     public var body: some View {
         NavigationView {
             VStack(spacing: 0) {
+				RichTextFormatToolbar(
+					context: context,
+					config: config
+				)
+				Divider()
                 RichTextFont.ListPicker(
                     selection: $context.fontName
-                )
-                Divider()
-                RichTextFormatToolbar(
-                    context: context,
-                    config: config
                 )
             }
             .padding(.top, -35)
