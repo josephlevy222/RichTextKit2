@@ -57,11 +57,17 @@ public struct RichTextFormatSheet: RichTextFormatToolbarBase {
 				RichTextFormatToolbar(
 					context: context,
 					config: config
-				)
+				).padding(.top)
 				Divider()
                 RichTextFont.ListPicker(
                     selection: $context.fontName
-                )
+				)
+				Divider()
+				RichTextFormatToolbar(
+					context: context,
+					config: config
+				)
+				Divider()
             }
             .padding(.top, -35)
             .toolbar {
