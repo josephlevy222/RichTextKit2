@@ -187,7 +187,7 @@ public extension RichTextView {
 
     /// The text view's layout manager, if any.
     var layoutManagerWrapper: NSLayoutManager? {
-        layoutManager
+        textLayoutManager
     }
 
     /// The spacing between the text view edges and its text.

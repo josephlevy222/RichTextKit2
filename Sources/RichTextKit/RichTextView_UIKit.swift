@@ -32,8 +32,9 @@ open class RichTextView: UITextView, RichTextViewComponent {
         data: Data,
         format: RichTextDataFormat = .archivedData
     ) throws {
-		if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
-		else { self.init() }
+		//if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
+		//else {
+		self.init() //}
         try self.setup(with: data, format: format)
     }
 
@@ -41,8 +42,9 @@ open class RichTextView: UITextView, RichTextViewComponent {
         string: NSAttributedString,
         format: RichTextDataFormat = .archivedData
     ) {
-		if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
-		else { self.init() }
+		//if #available(iOS 16, *) { self.init(usingTextLayoutManager: false) }
+		//else {
+		self.init() //}
         self.setup(with: string, format: format)
     }
 
